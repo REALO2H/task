@@ -6,7 +6,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 
-// I am using a simle csv file as a database, since I don't to use a real database for this task.
+// I am using a simle csv file as a database, since I don't need to use a real database for this task.
 const csvPath = 'posts.csv';
 const dir = path.dirname(csvPath);
 if (!fs.existsSync(dir)) {
@@ -71,18 +71,13 @@ class post {
 }
 
 //Users Classes
-interface Iinterface_User {
-  name: string;
-  password: string;
-  email: string;
-  viewPost(csvPath: string): void;
-}
 
-abstract class AbstractUser implements Iinterface_User {
+
+abstract class AbstractUser  {
   
-  public name  : string;
-  public password: string;
-  public email: string;
+  protected name  : string;
+  protected password: string;
+  protected email: string;
 
 
   public constructor(name: string, password: string, email: string) {
